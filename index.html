@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CPU Scheduling Algorithms Simulator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>CPU Scheduling Algorithms Simulator</h1>
+        
+        <div class="input-section">
+            <h2>Process Input</h2>
+            <div id="process-inputs">
+                <div class="process-input">
+                    <input type="number" class="pid" placeholder="Process ID" min="1">
+                    <input type="number" class="arrival-time" placeholder="Arrival Time" min="0">
+                    <input type="number" class="burst-time" placeholder="Burst Time" min="1">
+                    <input type="number" class="priority" placeholder="Priority (optional)">
+                    <button class="remove-btn">×</button>
+                </div>
+            </div>
+            <button id="add-process">Add Process</button>
+            <button id="generate-random">Generate Random Processes</button>
+            <button id="clear-all">Clear All</button>
+        </div>
+
+        <div class="algorithm-section">
+            <h2>Algorithm Selection</h2>
+            <select id="algorithm-select">
+                <option value="fcfs">First Come First Serve (FCFS)</option>
+                <option value="sjf">Shortest Job First (SJF)</option>
+                <option value="srtf">Shortest Remaining Time First (SRTF)</option>
+                <option value="rr">Round Robin (RR)</option>
+                <option value="priority">Priority Scheduling</option>
+                <option value="priority_preemptive">Priority Scheduling (Preemptive)</option>
+            </select>
+            <div id="time-quantum-container" style="display: none;">
+                <label for="time-quantum">Time Quantum:</label>
+                <input type="number" id="time-quantum" min="1" value="2">
+            </div>
+            <button id="simulate-btn">Simulate</button>
+            <button id="compare-btn">Compare Algorithms</button>
+        </div>
+
+        <div class="results-section">
+            <h2>Results</h2>
+            <div id="gantt-chart"></div>
+            <div id="results-table"></div>
+            <div id="comparison-results" style="display: none;">
+                <h3>Algorithm Comparison</h3>
+                <table id="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Algorithm</th>
+                            <th>Average Waiting Time</th>
+                            <th>Average Turnaround Time</th>
+                            <th>Throughput</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

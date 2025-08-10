@@ -1,3 +1,3 @@
 # CPU-Scheduling-Algorithm-Simulator
 <br>
-Author - Shafkat
+Author - Mahir Shafkat
